@@ -36,7 +36,11 @@ class ProductsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $products = Category::create($request->post());
+                return response()->json([
+                    'message' => 'Product Created Successfully!!!',
+                    'product' => $products
+                ]);
     }
 
     /**
@@ -47,7 +51,7 @@ class ProductsController extends Controller
      */
     public function show(products $products)
     {
-        //
+        return response()->json($products);
     }
 
     /**
