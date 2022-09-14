@@ -14,7 +14,8 @@ class ProductsController extends Controller
      */
     public function index()
     {
-        //
+         $products = Category::all(['id','name','picture']);
+                return response()->json($products);
     }
 
     /**
