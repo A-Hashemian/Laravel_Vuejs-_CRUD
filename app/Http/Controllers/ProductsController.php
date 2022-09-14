@@ -74,7 +74,12 @@ class ProductsController extends Controller
      */
     public function update(Request $request, products $products)
     {
-        //
+         $products->fill($request->post())->save();
+
+                return response()->json([
+                    'message' => 'Product Updated Successfully!!!',
+                    'products' => $products
+                ]);
     }
 
     /**
@@ -85,6 +90,9 @@ class ProductsController extends Controller
      */
     public function destroy(products $products)
     {
-        //
+         $products->delete();
+                return response()->json([
+                    'message' => 'Product Deleted Successfully!!!'
+                ]);
     }
 }
