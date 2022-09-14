@@ -1,7 +1,7 @@
 const Welcome = () => import('./components/Welcome.vue')
-const ProductList = () => import('./components/Product/List.vue')
-const ProducCreate = () => import('./components/Produc/Add.vue')
-const ProducEdit = () => import('./components/Produc/Edit.vue')
+const ProductList = () => import('./components/Products/List.vue')
+const ProducCreate = () => import('./components/Products/Add.vue')
+const ProducEdit = () => import('./components/Products/Edit.vue')
 export const routes = [
     {
         name: 'home',
@@ -14,12 +14,12 @@ export const routes = [
         component: ProductList
     },
     {
-        name: 'categoryEdit',
+        name: 'ProductEdit',
         path: '/Products/:id/edit',
         component: ProducCreate
     },
     {
-        name: 'categoryAdd',
+        name: 'ProductAdd',
         path: '/Products/add',
         component: ProducEdit
     }
